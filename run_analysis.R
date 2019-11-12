@@ -89,7 +89,7 @@ selected_dataset <- final_dataset[, selected_columns]
 #there are two ways of doing this activity, the first one is to merge the final_dataset with the activity_labels
 #and reordering the columns in a way that the activityType is next to the activityID
 
-final_dataset <- merge(x = final_dataset, y = activity_labels, by = "activityId", all.x = TRUE)
+#final_dataset <- merge(x = final_dataset, y = activity_labels, by = "activityId", all.x = TRUE)
 
 #the other one, is to declare activityId as a factor, assigning levels according to the activity_levels files
 #and labeles according to the same file
