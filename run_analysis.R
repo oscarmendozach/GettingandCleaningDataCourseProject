@@ -96,6 +96,9 @@ final_dataset <- merge(x = final_dataset, y = activity_labels, by = "activityId"
 
 final_dataset$activityId <- factor(x = final_dataset$activityId, levels = activity_labels$activityId, labels = activity_labels$activityType )
 
+######################################################################
+######################################################################
+
 #4. Appropriately label the data set with descriptive activite names.
 
 #remove the ()
@@ -112,5 +115,30 @@ names(final_dataset) <- gsub(pattern = "\\,", replacement = ".", names(final_dat
 #although there are other rules for naming variables in Data Science, I do believe that besides these changes
 #the names of the variables are representative enough.
 
+######################################################################
+######################################################################
+
 #5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+#group_by subject and then activities, then summarizes then saving the values to a new dataframe
+#called tidy_data
+
+#declare subjectId as factor as well
+
+final_dataset$subjectId <- as.factor(final_dataset$subjectId)
+
+#melt the dataframe to create another one to compute the mean()
+
+library(reshape2)
+
+final_dataset_melted <- melt(final_dataset, id = c("subjectId","activityId"))
+
+#cast a new dataset with the means
+
+final_dataset_tidy <- dcast(final_dataset_melted, subjectId + activityId ~ variable, mean)
+
+#export the tidy dataset in a csv
+
+write.csv(x = final_dataset_tidy, file = "tidydataset.csv", row.names = FALSE, quote = FALSE )
+
 
