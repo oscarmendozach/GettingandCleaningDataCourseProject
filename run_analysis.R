@@ -8,7 +8,7 @@
 #1. Merges the training and the test sets to create one data set
 #2. Extract only the measurements on the mean and standard deviation for each measurement
 #3. Use descriptive activity names to name the activities in the data set
-#4. Appropriately label the data set with descriptive activite names.
+#4. Appropriately label the data set with descriptive activity names.
 #5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ######################################################################
@@ -99,7 +99,7 @@ final_dataset$activityId <- factor(x = final_dataset$activityId, levels = activi
 ######################################################################
 ######################################################################
 
-#4. Appropriately label the data set with descriptive activite names.
+#4. Appropriately label the data set with descriptive activity names.
 
 #remove the ()
 names(final_dataset) <- gsub(pattern = "\\()", replacement = "", names(final_dataset))
@@ -119,9 +119,6 @@ names(final_dataset) <- gsub(pattern = "\\,", replacement = ".", names(final_dat
 ######################################################################
 
 #5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-#group_by subject and then activities, then summarizes then saving the values to a new dataframe
-#called tidy_data
 
 #declare subjectId as factor as well
 
