@@ -134,8 +134,8 @@ final_dataset_melted <- melt(final_dataset, id = c("subjectId","activityId"))
 
 final_dataset_tidy <- dcast(final_dataset_melted, subjectId + activityId ~ variable, mean)
 
-#export the tidy dataset in a csv
+#export the tidy dataset in a txt
 
-write.csv(x = final_dataset_tidy, file = "tidydataset.csv", row.names = FALSE, quote = FALSE )
+write.table(x = final_dataset_tidy, file = "tidydataset.txt", row.names = FALSE, quote = FALSE )
 
 

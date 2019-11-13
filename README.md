@@ -9,5 +9,5 @@ The Review criteria is as follows:
 5. The Work submitted for this project is the work of the studen who submitted it.
 
 All the script is written in the file run_analysis.R
-The final dataset is in the file tydidataset.csv
+The final dataset is in the file tydidataset.txt 
 All the variables, data and transformation is explained in the CodeBook.md

@@ -32,7 +32,7 @@ The dataframe was exported using the write.csv() function.
 DATA
 
 the original data available is stored in the folder "/UCI HAR Dataset"
-the .cvs file is "tidydataset.csv"
+the .txt file is "tidydataset.txt"
 
 Id's
 
